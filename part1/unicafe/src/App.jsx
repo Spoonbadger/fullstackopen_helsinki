@@ -10,29 +10,15 @@ const App = () => {
   const average = all ? (good - bad) / all : 0
   const positive = all ? (good / all) * 100 :0
 
-  const handleClick = (text) => {
-    console.log(text)
-    if (text === 'good') {
-      setGood(good + 1)
-    }
-    else if (text === 'neutral') {
-      setNeutral(neutral + 1)
-    } 
-    else if (text === 'bad') {
-      setBad(bad + 1)
-    }
-  }
-
-
   if (all === 0) {
     return (
       <div>
         <h3>
           give feedback
         </h3>
-        <Button text='good' onClick={handleClick}/>
-        <Button text='neutral' onClick={handleClick}/>
-        <Button text='bad' onClick={handleClick}/>
+        <Button text='good' handleClick={() => setGood(good + 1)}/>
+        <Button text='neutral' handleClick={() => setNeutral(neutral + 1)}/>
+        <Button text='bad' handleClick={() => setBad(bad + 1)}/>
         <h3>
           statistics
         </h3>
@@ -48,9 +34,9 @@ const App = () => {
       <h3>
         give feedback
       </h3>
-      <Button text='good' onClick={handleClick} />
-      <Button text='neutral' onClick={handleClick}/>
-      <Button text='bad' onClick={handleClick}/>
+      <Button text='good' handleClick={() => setGood(good + 1)}/>
+      <Button text='neutral' handleClick={() => setNeutral(neutral + 1)}/>
+      <Button text='bad' handleClick={() => setBad(bad + 1)}/>
       <h3>
         statistics
       </h3>
@@ -69,7 +55,7 @@ const App = () => {
 
 const Button = (props) => {
   return (
-    <button onClick={() => props.onClick(props.text)}>{props.text}</button>
+    <button onClick={props.handleClick}>{props.text}</button>
   )
 }
 
