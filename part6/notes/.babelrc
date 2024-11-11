@@ -1,0 +1,6 @@
+{
+  "presents": [
+    "@babel/present-env",
+    ["@babel/present-react", { "runtime": "automatic" }]
+  ]
+}

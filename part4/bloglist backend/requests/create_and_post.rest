@@ -1,0 +1,35 @@
+###
+POST http://localhost:3003/api/users
+Content-Type: application/json
+
+{
+    "username": "adam1987",
+    "name": "adam buxton",
+    "password": "amsterdam"
+}
+
+
+
+###
+POST http://localhost:3003/api/login/
+Content-Type: application/json
+
+{
+    "username": "adam1987",
+    "password": "amsterdam"
+}
+
+
+###
+POST http://localhost:3003/api/blogs/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkYW0xOTg3IiwiaWQiOiI2NzEyYTc1MTcwNDk0Y2ZlNTlhMjIzMmYiLCJpYXQiOjE3Mjk3OTc5MDIsImV4cCI6MTcyOTgwMTUwMn0.7xw6czf6MQo_u0VKyjoOMHaSaGM1YDDKRbCRuOsJ1FY
+
+{
+    "title": "animals in their habi",
+    "author": "Rogald Doald",
+    "url": "www.rogesss.com",
+    "likes": "9"
+}
+
+
